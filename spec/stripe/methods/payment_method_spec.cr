@@ -7,6 +7,13 @@ describe Stripe::PaymentMethod do
 
     payment_method = Stripe::PaymentMethod.retrieve("asddad")
     payment_method.id.should eq("pm_1EUnwZ4XsdaddaBS77el70wJ")
+
+    card = payment_method.card.not_nil!
+    card.brand.should eq("visa")
+    card.last4.should eq("4242")
+    card.exp_month.should eq(8)
+    card.exp_year.should eq(2020)
+    card.fingerprint.should eq("J9eTvsiEPmoRkLBN")
   end
 
   it "attaches payment method" do

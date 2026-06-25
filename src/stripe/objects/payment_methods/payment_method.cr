@@ -13,6 +13,18 @@ class Stripe::PaymentMethod
     getter phone : String?
   end
 
+  # Card details as they appear nested on a PaymentMethod. NOT the legacy
+  # PaymentMethods::Card object — that one requires an `id` this sub-block lacks.
+  class Card
+    include JSON::Serializable
+
+    getter brand : String? # "visa" | "mastercard" | ...
+    getter last4 : String?
+    getter exp_month : UInt8?
+    getter exp_year : UInt16?
+    getter fingerprint : String?
+  end
+
   # Modern us_bank_account (ACH direct-debit) PaymentMethod details.
   # NOT the legacy Sources-shaped PaymentMethods::BankAccount object.
   class UsBankAccount
@@ -39,4 +51,6 @@ class Stripe::PaymentMethod
 
   @[JSON::Field(key: "us_bank_account")]
   getter us_bank_account : UsBankAccount?
+
+  getter card : Card?
 end
