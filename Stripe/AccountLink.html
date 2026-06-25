@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="stripe">
-  <title>Stripe::Invoice - stripe 1.6.0</title>
+  <title>Stripe::AccountLink - stripe 1.6.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -322,7 +322,7 @@
       
     </li>
   
-  <li class=" " data-id="stripe/Stripe/AccountLink" data-name="stripe::accountlink">
+  <li class=" current" data-id="stripe/Stripe/AccountLink" data-name="stripe::accountlink">
       <a href="../Stripe/AccountLink.html">AccountLink</a>
       
     </li>
@@ -607,7 +607,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="stripe/Stripe/Invoice" data-name="stripe::invoice">
+  <li class="parent " data-id="stripe/Stripe/Invoice" data-name="stripe::invoice">
       <a href="../Stripe/Invoice.html">Invoice</a>
       
         <ul>
@@ -913,12 +913,12 @@
 
   <span class="kind">
     class
-  </span> Stripe::<wbr>Invoice
+  </span> Stripe::<wbr>AccountLink
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Stripe/Invoice.html">Stripe::Invoice</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Stripe/AccountLink.html">Stripe::AccountLink</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -964,17 +964,12 @@
   </h2>
   
     
-      stripe/methods/core/invoices/create_invoice.cr
+      stripe/methods/create_account_link.cr
     
     <br/>
   
     
-      stripe/methods/core/invoices/update_invoice.cr
-    
-    <br/>
-  
-    
-      stripe/objects/core/invoice.cr
+      stripe/objects/account_link.cr
     
     <br/>
   
@@ -995,7 +990,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create%28customer%3AString%7CCustomer%7CNil%3Dnil%2Cauto_advance%3ABool%7CNil%3Dnil%2Cdefault_source%3AString%7CToken%7CNil%3Dnil%2Cdefault_payment_method%3AString%7CToken%7CNil%3Dnil%2Cmetadata%3AHash%7CNil%3Dnil%2Csubscription%3AString%7CNil%3Dnil%2Cstatement_descriptor%3AString%7CNil%3Dnil%29%3AInvoiceforallT%2CU-class-method" class="signature"><strong>.create</strong>(customer : String | Customer | Nil = <span class="n">nil</span>, auto_advance : Bool | Nil = <span class="n">nil</span>, default_source : String | Token | Nil = <span class="n">nil</span>, default_payment_method : String | Token | Nil = <span class="n">nil</span>, metadata : Hash | Nil = <span class="n">nil</span>, subscription : String | Nil = <span class="n">nil</span>, statement_descriptor : String | Nil = <span class="n">nil</span>) : Invoice forall T, U</a>
+        <a href="#create%28account%3AString%7CStripe%3A%3AAccount%2Crefresh_url%3AString%2Creturn_url%3AString%2Ctype%3AString%3D%22account_onboarding%22%29%3AAccountLinkforallT%2CU-class-method" class="signature"><strong>.create</strong>(account : String | Stripe::Account, refresh_url : String, return_url : String, type : String = <span class="s">&quot;account_onboarding&quot;</span>) : AccountLink forall T, U</a>
         
       </li>
     
@@ -1009,42 +1004,10 @@
         
       </li>
     
-      <li class="entry-summary">
-        <a href="#update%28invoice%3AString%7CInvoice%2Cauto_advance%3ABool%7CNil%3Dnil%2Cdefault_source%3AString%7CToken%7CNil%3Dnil%2Cdefault_payment_method%3AString%7CToken%7CNil%3Dnil%2Cmetadata%3AHash%7CNil%3Dnil%2Csubscription%3AString%7CNil%3Dnil%2Cstatement_descriptor%3AString%7CNil%3Dnil%29%3AInvoiceforallT%2CU-class-method" class="signature"><strong>.update</strong>(invoice : String | Invoice, auto_advance : Bool | Nil = <span class="n">nil</span>, default_source : String | Token | Nil = <span class="n">nil</span>, default_payment_method : String | Token | Nil = <span class="n">nil</span>, metadata : Hash | Nil = <span class="n">nil</span>, subscription : String | Nil = <span class="n">nil</span>, statement_descriptor : String | Nil = <span class="n">nil</span>) : Invoice forall T, U</a>
-        
-      </li>
-    
   </ul>
 
 
   
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#list%28customer%3AString%7CNil%3Dnil%2Cstatus%3AString%7CNil%7CStripe%3A%3AInvoice%3A%3AStatus%7CNil%3Dnil%2Climit%3AInt32%7CNil%3Dnil%2Cstarting_after%3AString%7CNil%3Dnil%2Cending_before%3AString%7CNil%3Dnil%29%3AList%28Stripe%3A%3AInvoice%29-class-method" class="signature"><strong>.list</strong>(customer : String | Nil = <span class="n">nil</span>, status : String | Nil | Stripe::Invoice::Status | Nil = <span class="n">nil</span>, limit : Int32 | Nil = <span class="n">nil</span>, starting_after : String | Nil = <span class="n">nil</span>, ending_before : String | Nil = <span class="n">nil</span>) : List(Stripe::Invoice)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#retrieve%28id%3AString%29-class-method" class="signature"><strong>.retrieve</strong>(id : String)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#retrieve%28invoice%3AStripe%3A%3AInvoice%29-class-method" class="signature"><strong>.retrieve</strong>(invoice : Stripe::Invoice)</a>
-        
-      </li>
-    
-  </ul>
-
 
   
 
@@ -1060,157 +1023,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#account_country%3AString%7CNil-instance-method" class="signature"><strong>#account_country</strong> : String | Nil</a>
+        <a href="#created%3ATime%7CNil-instance-method" class="signature"><strong>#created</strong> : Time | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#account_name%3AString%7CNil-instance-method" class="signature"><strong>#account_name</strong> : String | Nil</a>
+        <a href="#expires_at%3ATime%7CNil-instance-method" class="signature"><strong>#expires_at</strong> : Time | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#amount_due%3AInt32%7CNil-instance-method" class="signature"><strong>#amount_due</strong> : Int32 | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#amount_paid%3AInt32%7CNil-instance-method" class="signature"><strong>#amount_paid</strong> : Int32 | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#amount_remaining%3AInt32%7CNil-instance-method" class="signature"><strong>#amount_remaining</strong> : Int32 | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#application_fee_amount%3AInt32%7CNil-instance-method" class="signature"><strong>#application_fee_amount</strong> : Int32 | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#attempt_count%3AInt32-instance-method" class="signature"><strong>#attempt_count</strong> : Int32</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#attempted%3F%3ABool-instance-method" class="signature"><strong>#attempted?</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#auto_advance%3F%3ABool-instance-method" class="signature"><strong>#auto_advance?</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#billing%3AString%7CNil-instance-method" class="signature"><strong>#billing</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#billing_reason%3AString%7CNil-instance-method" class="signature"><strong>#billing_reason</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#charge%3AString%7CNil-instance-method" class="signature"><strong>#charge</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#collection_method%3ACollectionMethod-instance-method" class="signature"><strong>#collection_method</strong> : CollectionMethod</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer%3AString%7CNil-instance-method" class="signature"><strong>#customer</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_address%3AString%7CNil-instance-method" class="signature"><strong>#customer_address</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_email%3AString%7CNil-instance-method" class="signature"><strong>#customer_email</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_name%3AString%7CNil-instance-method" class="signature"><strong>#customer_name</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_phone%3AString%7CNil-instance-method" class="signature"><strong>#customer_phone</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_shipping%3AHash%28String%2CString%7CHash%28String%2CString%29%29%7CNil-instance-method" class="signature"><strong>#customer_shipping</strong> : Hash(String, String | Hash(String, String)) | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#customer_tax_exempt%3AString%7CNil-instance-method" class="signature"><strong>#customer_tax_exempt</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#default_tax_rates%3AArray%28Hash%28String%2CString%7CBool%7CTime%7CHash%28String%2CString%29%29%29%7CNil-instance-method" class="signature"><strong>#default_tax_rates</strong> : Array(Hash(String, String | Bool | Time | Hash(String, String))) | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#description%3AString%7CNil-instance-method" class="signature"><strong>#description</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#due_date%3ATime%7CNil-instance-method" class="signature"><strong>#due_date</strong> : Time | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#ending_balance%3AInt32%7CNil-instance-method" class="signature"><strong>#ending_balance</strong> : Int32 | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#hosted_invoice_url%3AString%7CNil-instance-method" class="signature"><strong>#hosted_invoice_url</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#invoice_pdf%3AString%7CNil-instance-method" class="signature"><strong>#invoice_pdf</strong> : String | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#lines%3AList%28LineItem%29%7CNil-instance-method" class="signature"><strong>#lines</strong> : List(LineItem) | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#livemode%3F%3ABool-instance-method" class="signature"><strong>#livemode?</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#payment_intent%3AString%7CNil%7CStripe%3A%3APaymentIntent%7CNil-instance-method" class="signature"><strong>#payment_intent</strong> : String | Nil | Stripe::PaymentIntent | Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#status%3AStatus-instance-method" class="signature"><strong>#status</strong> : Status</a>
+        <a href="#url%3AString%7CNil-instance-method" class="signature"><strong>#url</strong> : String | Nil</a>
         
       </li>
     
@@ -1303,12 +1126,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="create(customer:String|Customer|Nil=nil,auto_advance:Bool|Nil=nil,default_source:String|Token|Nil=nil,default_payment_method:String|Token|Nil=nil,metadata:Hash|Nil=nil,subscription:String|Nil=nil,statement_descriptor:String|Nil=nil):InvoiceforallT,U-class-method">
+    <div class="entry-detail" id="create(account:String|Stripe::Account,refresh_url:String,return_url:String,type:String=&quot;account_onboarding&quot;):AccountLinkforallT,U-class-method">
       <div class="signature">
         
-        def self.<strong>create</strong>(customer : String | <a href="../Stripe/Customer.html">Customer</a> | Nil = <span class="n">nil</span>, auto_advance : Bool | Nil = <span class="n">nil</span>, default_source : String | <a href="../Stripe/Token.html">Token</a> | Nil = <span class="n">nil</span>, default_payment_method : String | <a href="../Stripe/Token.html">Token</a> | Nil = <span class="n">nil</span>, metadata : Hash | Nil = <span class="n">nil</span>, subscription : String | Nil = <span class="n">nil</span>, statement_descriptor : String | Nil = <span class="n">nil</span>) : <a href="../Stripe/Invoice.html">Invoice</a> forall T, U
+        def self.<strong>create</strong>(account : String | <a href="../Stripe/Account.html">Stripe::Account</a>, refresh_url : String, return_url : String, type : String = <span class="s">&quot;account_onboarding&quot;</span>) : <a href="../Stripe/AccountLink.html">AccountLink</a> forall T, U
 
-        <a class="method-permalink" href="#create%28customer%3AString%7CCustomer%7CNil%3Dnil%2Cauto_advance%3ABool%7CNil%3Dnil%2Cdefault_source%3AString%7CToken%7CNil%3Dnil%2Cdefault_payment_method%3AString%7CToken%7CNil%3Dnil%2Cmetadata%3AHash%7CNil%3Dnil%2Csubscription%3AString%7CNil%3Dnil%2Cstatement_descriptor%3AString%7CNil%3Dnil%29%3AInvoiceforallT%2CU-class-method">#</a>
+        <a class="method-permalink" href="#create%28account%3AString%7CStripe%3A%3AAccount%2Crefresh_url%3AString%2Creturn_url%3AString%2Ctype%3AString%3D%22account_onboarding%22%29%3AAccountLinkforallT%2CU-class-method">#</a>
       </div>
       
       <br/>
@@ -1345,75 +1168,9 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="update(invoice:String|Invoice,auto_advance:Bool|Nil=nil,default_source:String|Token|Nil=nil,default_payment_method:String|Token|Nil=nil,metadata:Hash|Nil=nil,subscription:String|Nil=nil,statement_descriptor:String|Nil=nil):InvoiceforallT,U-class-method">
-      <div class="signature">
-        
-        def self.<strong>update</strong>(invoice : String | <a href="../Stripe/Invoice.html">Invoice</a>, auto_advance : Bool | Nil = <span class="n">nil</span>, default_source : String | <a href="../Stripe/Token.html">Token</a> | Nil = <span class="n">nil</span>, default_payment_method : String | <a href="../Stripe/Token.html">Token</a> | Nil = <span class="n">nil</span>, metadata : Hash | Nil = <span class="n">nil</span>, subscription : String | Nil = <span class="n">nil</span>, statement_descriptor : String | Nil = <span class="n">nil</span>) : <a href="../Stripe/Invoice.html">Invoice</a> forall T, U
-
-        <a class="method-permalink" href="#update%28invoice%3AString%7CInvoice%2Cauto_advance%3ABool%7CNil%3Dnil%2Cdefault_source%3AString%7CToken%7CNil%3Dnil%2Cdefault_payment_method%3AString%7CToken%7CNil%3Dnil%2Cmetadata%3AHash%7CNil%3Dnil%2Csubscription%3AString%7CNil%3Dnil%2Cstatement_descriptor%3AString%7CNil%3Dnil%29%3AInvoiceforallT%2CU-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
 
 
   
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="list(customer:String|Nil=nil,status:String|Nil|Stripe::Invoice::Status|Nil=nil,limit:Int32|Nil=nil,starting_after:String|Nil=nil,ending_before:String|Nil=nil):List(Stripe::Invoice)-class-method">
-      <div class="signature">
-        
-        def self.<strong>list</strong>(customer : String | Nil = <span class="n">nil</span>, status : String | Nil | <a href="../Stripe/Invoice/Status.html">Stripe::Invoice::Status</a> | Nil = <span class="n">nil</span>, limit : Int32 | Nil = <span class="n">nil</span>, starting_after : String | Nil = <span class="n">nil</span>, ending_before : String | Nil = <span class="n">nil</span>) : <a href="../Stripe/List.html">List</a>(<a href="../Stripe/Invoice.html">Stripe::Invoice</a>)
-
-        <a class="method-permalink" href="#list%28customer%3AString%7CNil%3Dnil%2Cstatus%3AString%7CNil%7CStripe%3A%3AInvoice%3A%3AStatus%7CNil%3Dnil%2Climit%3AInt32%7CNil%3Dnil%2Cstarting_after%3AString%7CNil%3Dnil%2Cending_before%3AString%7CNil%3Dnil%29%3AList%28Stripe%3A%3AInvoice%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="retrieve(id:String)-class-method">
-      <div class="signature">
-        
-        def self.<strong>retrieve</strong>(id : String)
-
-        <a class="method-permalink" href="#retrieve%28id%3AString%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="retrieve(invoice:Stripe::Invoice)-class-method">
-      <div class="signature">
-        
-        def self.<strong>retrieve</strong>(invoice : <a href="../Stripe/Invoice.html">Stripe::Invoice</a>)
-
-        <a class="method-permalink" href="#retrieve%28invoice%3AStripe%3A%3AInvoice%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
 
   
 
@@ -1427,12 +1184,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="account_country:String|Nil-instance-method">
+    <div class="entry-detail" id="created:Time|Nil-instance-method">
       <div class="signature">
         
-        def <strong>account_country</strong> : String | Nil
+        def <strong>created</strong> : Time | Nil
 
-        <a class="method-permalink" href="#account_country%3AString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#created%3ATime%7CNil-instance-method">#</a>
       </div>
       
       <br/>
@@ -1441,12 +1198,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="account_name:String|Nil-instance-method">
+    <div class="entry-detail" id="expires_at:Time|Nil-instance-method">
       <div class="signature">
         
-        def <strong>account_name</strong> : String | Nil
+        def <strong>expires_at</strong> : Time | Nil
 
-        <a class="method-permalink" href="#account_name%3AString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#expires_at%3ATime%7CNil-instance-method">#</a>
       </div>
       
       <br/>
@@ -1455,404 +1212,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="amount_due:Int32|Nil-instance-method">
+    <div class="entry-detail" id="url:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>amount_due</strong> : Int32 | Nil
+        def <strong>url</strong> : String | Nil
 
-        <a class="method-permalink" href="#amount_due%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="amount_paid:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>amount_paid</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#amount_paid%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="amount_remaining:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>amount_remaining</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#amount_remaining%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="application_fee_amount:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>application_fee_amount</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#application_fee_amount%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="attempt_count:Int32-instance-method">
-      <div class="signature">
-        
-        def <strong>attempt_count</strong> : Int32
-
-        <a class="method-permalink" href="#attempt_count%3AInt32-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="attempted?:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>attempted?</strong> : Bool
-
-        <a class="method-permalink" href="#attempted%3F%3ABool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="auto_advance?:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>auto_advance?</strong> : Bool
-
-        <a class="method-permalink" href="#auto_advance%3F%3ABool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="billing:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>billing</strong> : String | Nil
-
-        <a class="method-permalink" href="#billing%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="billing_reason:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>billing_reason</strong> : String | Nil
-
-        <a class="method-permalink" href="#billing_reason%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="charge:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>charge</strong> : String | Nil
-
-        <a class="method-permalink" href="#charge%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="collection_method:CollectionMethod-instance-method">
-      <div class="signature">
-        
-        def <strong>collection_method</strong> : <a href="../Stripe/Invoice/CollectionMethod.html">CollectionMethod</a>
-
-        <a class="method-permalink" href="#collection_method%3ACollectionMethod-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_address:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_address</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer_address%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_email:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_email</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer_email%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_name:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_name</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer_name%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_phone:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_phone</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer_phone%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_shipping:Hash(String,String|Hash(String,String))|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_shipping</strong> : Hash(String, String | Hash(String, String)) | Nil
-
-        <a class="method-permalink" href="#customer_shipping%3AHash%28String%2CString%7CHash%28String%2CString%29%29%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="customer_tax_exempt:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>customer_tax_exempt</strong> : String | Nil
-
-        <a class="method-permalink" href="#customer_tax_exempt%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="default_tax_rates:Array(Hash(String,String|Bool|Time|Hash(String,String)))|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>default_tax_rates</strong> : Array(Hash(String, String | Bool | Time | Hash(String, String))) | Nil
-
-        <a class="method-permalink" href="#default_tax_rates%3AArray%28Hash%28String%2CString%7CBool%7CTime%7CHash%28String%2CString%29%29%29%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="description:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>description</strong> : String | Nil
-
-        <a class="method-permalink" href="#description%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="due_date:Time|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>due_date</strong> : Time | Nil
-
-        <a class="method-permalink" href="#due_date%3ATime%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="ending_balance:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>ending_balance</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#ending_balance%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="hosted_invoice_url:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>hosted_invoice_url</strong> : String | Nil
-
-        <a class="method-permalink" href="#hosted_invoice_url%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="id:String-instance-method">
-      <div class="signature">
-        
-        def <strong>id</strong> : String
-
-        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="invoice_pdf:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>invoice_pdf</strong> : String | Nil
-
-        <a class="method-permalink" href="#invoice_pdf%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="lines:List(LineItem)|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>lines</strong> : <a href="../Stripe/List.html">List</a>(<a href="../Stripe/Invoice/LineItem.html">LineItem</a>) | Nil
-
-        <a class="method-permalink" href="#lines%3AList%28LineItem%29%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="livemode?:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>livemode?</strong> : Bool
-
-        <a class="method-permalink" href="#livemode%3F%3ABool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="payment_intent:String|Nil|Stripe::PaymentIntent|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>payment_intent</strong> : String | Nil | <a href="../Stripe/PaymentIntent.html">Stripe::PaymentIntent</a> | Nil
-
-        <a class="method-permalink" href="#payment_intent%3AString%7CNil%7CStripe%3A%3APaymentIntent%7CNil-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="status:Status-instance-method">
-      <div class="signature">
-        
-        def <strong>status</strong> : <a href="../Stripe/Invoice/Status.html">Status</a>
-
-        <a class="method-permalink" href="#status%3AStatus-instance-method">#</a>
+        <a class="method-permalink" href="#url%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
