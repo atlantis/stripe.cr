@@ -1,0 +1,35 @@
+{
+  "id": "pm_1MqLiJLkdIwHu7ixUEgbFdYF",
+  "object": "payment_method",
+  "billing_details": {
+    "address": {
+      "city": null,
+      "country": null,
+      "line1": null,
+      "line2": null,
+      "postal_code": null,
+      "state": null
+    },
+    "email": "jenny@example.com",
+    "name": "Jenny Rosen",
+    "phone": null
+  },
+  "created": 1556599912,
+  "customer": "cus_4QHS5k9YC2TcST",
+  "livemode": false,
+  "metadata": {},
+  "type": "us_bank_account",
+  "us_bank_account": {
+    "account_holder_type": "individual",
+    "account_type": "checking",
+    "bank_name": "STRIPE TEST BANK",
+    "financial_connections_account": null,
+    "fingerprint": "LstWJFsHfwiuoslc",
+    "last4": "6789",
+    "networks": {
+      "preferred": "ach",
+      "supported": ["ach"]
+    },
+    "routing_number": "110000000"
+  }
+}

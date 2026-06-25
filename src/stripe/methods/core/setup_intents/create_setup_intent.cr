@@ -6,6 +6,8 @@ class Stripe::SetupIntent
     on_behalf_of : String? = nil,
     usage : String? = nil,
     payment_method : String | Token | PaymentMethods::Card | PaymentMethods::BankAccount? = nil,
+    payment_method_types : Array(String)? = nil,
+    payment_method_options : NamedTuple | Hash? = nil,
     return_url : String? = nil,
     expand : Array(String)? = nil
   ) : SetupIntent forall T, U
@@ -21,7 +23,7 @@ class Stripe::SetupIntent
     io = IO::Memory.new
     builder = ParamsBuilder.new(io)
 
-    {% for x in %w(customer description metadata usage on_behalf_of payment_method return_url expand) %}
+    {% for x in %w(customer description metadata usage on_behalf_of payment_method payment_method_types payment_method_options return_url expand) %}
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 

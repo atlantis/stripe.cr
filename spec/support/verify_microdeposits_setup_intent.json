@@ -1,0 +1,28 @@
+{
+  "id": "seti_123456789",
+  "object": "setup_intent",
+  "application": null,
+  "cancellation_reason": null,
+  "client_secret": null,
+  "created": 123456789,
+  "customer": null,
+  "description": null,
+  "last_setup_error": null,
+  "livemode": false,
+  "mandate": "mandate_123456789",
+  "metadata": {},
+  "next_action": null,
+  "on_behalf_of": null,
+  "payment_method": "pm_1MqLiJLkdIwHu7ixUEgbFdYF",
+  "payment_method_options": {
+    "us_bank_account": {
+      "verification_method": "microdeposits"
+    }
+  },
+  "payment_method_types": [
+    "us_bank_account"
+  ],
+  "single_use_mandate": null,
+  "status": "succeeded",
+  "usage": "off_session"
+}

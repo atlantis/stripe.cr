@@ -7,6 +7,12 @@ class Stripe::ParamsBuilder < HTTP::Params::Builder
     end
   end
 
+  def add(key, value : Array(Int32 | Int64))
+    value.each_with_index do |v, i|
+      add("#{key}[#{i}]", v.to_s)
+    end
+  end
+
   def add(key, value : Array(Hash(K, V) | NamedTuple)) forall K, V
     value.each_with_index do |v, i|
       add("#{key}[#{i}]", v)

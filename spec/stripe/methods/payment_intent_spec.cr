@@ -34,4 +34,13 @@ describe Stripe::PaymentIntent do
     intent.id.should eq("pi_1GSdxwIfhoELGSZwHJ9Kcws7")
     intent.status.should eq(Stripe::PaymentIntent::Status::Succeeded)
   end
+
+  it "verifies microdeposits with amounts" do
+    WebMock.stub(:post, "https://api.stripe.com/v1/payment_intents/pi_1EUnwX4XsdaddaBS0K7XUB5v/verify_microdeposits")
+      .with(body: "amounts%5B0%5D=32&amounts%5B1%5D=45")
+      .to_return(status: 200, body: File.read("spec/support/retrieve_payment_intent.json"), headers: {"Content-Type" => "application/json"})
+
+    intent = Stripe::PaymentIntent.verify_microdeposits("pi_1EUnwX4XsdaddaBS0K7XUB5v", amounts: [32, 45])
+    intent.id.should eq("pi_1EUnwX4XsdaddaBS0K7XUB5v")
+  end
 end

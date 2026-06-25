@@ -2,6 +2,7 @@ class Stripe::SetupIntent
   def self.confirm(
     intent : String | SetupIntent? = nil,
     payment_method : String | Token | PaymentMethods::Card | PaymentMethods::BankAccount? = nil,
+    payment_method_options : NamedTuple | Hash? = nil,
     return_url : String? = nil
   ) : SetupIntent forall T, U
     intent = intent.as(SetupIntent).id if intent.is_a?(SetupIntent)
@@ -13,7 +14,7 @@ class Stripe::SetupIntent
     io = IO::Memory.new
     builder = ParamsBuilder.new(io)
 
-    {% for x in %w(payment_method return_url) %}
+    {% for x in %w(payment_method payment_method_options return_url) %}
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 
