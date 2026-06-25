@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="stripe">
-  <title>Stripe::Account::Type - stripe 1.6.0</title>
+  <title>Stripe::PaymentMethod::Card - stripe 1.6.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -97,7 +97,7 @@
       
         <ul>
   
-  <li class="parent open current" data-id="stripe/Stripe/Account" data-name="stripe::account">
+  <li class="parent " data-id="stripe/Stripe/Account" data-name="stripe::account">
       <a href="../../Stripe/Account.html">Account</a>
       
         <ul>
@@ -312,7 +312,7 @@
       
     </li>
   
-  <li class=" current" data-id="stripe/Stripe/Account/Type" data-name="stripe::account::type">
+  <li class=" " data-id="stripe/Stripe/Account/Type" data-name="stripe::account::type">
       <a href="../../Stripe/Account/Type.html">Type</a>
       
     </li>
@@ -657,7 +657,7 @@
       
     </li>
   
-  <li class="parent " data-id="stripe/Stripe/PaymentMethod" data-name="stripe::paymentmethod">
+  <li class="parent open current" data-id="stripe/Stripe/PaymentMethod" data-name="stripe::paymentmethod">
       <a href="../../Stripe/PaymentMethod.html">PaymentMethod</a>
       
         <ul>
@@ -667,7 +667,7 @@
       
     </li>
   
-  <li class=" " data-id="stripe/Stripe/PaymentMethod/Card" data-name="stripe::paymentmethod::card">
+  <li class=" current" data-id="stripe/Stripe/PaymentMethod/Card" data-name="stripe::paymentmethod::card">
       <a href="../../Stripe/PaymentMethod/Card.html">Card</a>
       
     </li>
@@ -922,12 +922,28 @@
 <h1 class="type-name">
 
   <span class="kind">
-    enum
-  </span> Stripe::<wbr>Account::<wbr>Type
+    class
+  </span> Stripe::<wbr>PaymentMethod::<wbr>Card
 
 </h1>
 
 
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Stripe/PaymentMethod/Card.html">Stripe::PaymentMethod::Card</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Card details as they appear nested on a PaymentMethod. NOT the legacy
+PaymentMethods::Card object — that one requires an <code>id</code> this sub-block lacks.</p>
 
 
 
@@ -935,7 +951,19 @@
 
 
 
-
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
 
 
 
@@ -956,45 +984,38 @@
   </h2>
   
     
-      stripe/objects/account.cr
+      stripe/objects/payment_methods/payment_method.cr
     
     <br/>
   
 
 
 
+
+
   
-    <h2>
-      <a id="enum-members" class="anchor" href="#enum-members">
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-      Enum Members
-    </h2>
-  
-  <dl>
+    Constructors
+  </h2>
+  <ul class="list-summary">
     
-      <dt class="entry-const" id="Custom">
-        <strong>Custom</strong> = <code><span class="n">0</span></code>
-      </dt>
-      
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
     
-      <dt class="entry-const" id="Express">
-        <strong>Express</strong> = <code><span class="n">1</span></code>
-      </dt>
-      
+      <li class="entry-summary">
+        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        
+      </li>
     
-      <dt class="entry-const" id="Standard">
-        <strong>Standard</strong> = <code><span class="n">2</span></code>
-      </dt>
-      
-    
-  </dl>
+  </ul>
 
-
-
-  
 
   
 
@@ -1012,23 +1033,27 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#custom%3F-instance-method" class="signature"><strong>#custom?</strong></a>
-        
-          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Custom">Custom</a></code></p></div>
+        <a href="#brand%3AString%7CNil-instance-method" class="signature"><strong>#brand</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#express%3F-instance-method" class="signature"><strong>#express?</strong></a>
-        
-          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Express">Express</a></code></p></div>
+        <a href="#exp_month%3AUInt8%7CNil-instance-method" class="signature"><strong>#exp_month</strong> : UInt8 | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#standard%3F-instance-method" class="signature"><strong>#standard?</strong></a>
+        <a href="#exp_year%3AUInt16%7CNil-instance-method" class="signature"><strong>#exp_year</strong> : UInt16 | Nil</a>
         
-          <div class="summary"><p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Standard">Standard</a></code></p></div>
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fingerprint%3AString%7CNil-instance-method" class="signature"><strong>#fingerprint</strong> : String | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last4%3AString%7CNil-instance-method" class="signature"><strong>#last4</strong> : String | Nil</a>
         
       </li>
     
@@ -1077,22 +1102,47 @@
 
 
     
-      
-
-
-      
-
-
-      
-
-
-      
-
-
-    
   </div>
 
   
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
   
 
@@ -1108,18 +1158,13 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="custom?-instance-method">
+    <div class="entry-detail" id="brand:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>custom?</strong>
+        def <strong>brand</strong> : String | Nil
 
-        <a class="method-permalink" href="#custom%3F-instance-method">#</a>
+        <a class="method-permalink" href="#brand%3AString%7CNil-instance-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Custom">Custom</a></code></p>
-        </div>
       
       <br/>
       <div>
@@ -1127,18 +1172,13 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="express?-instance-method">
+    <div class="entry-detail" id="exp_month:UInt8|Nil-instance-method">
       <div class="signature">
         
-        def <strong>express?</strong>
+        def <strong>exp_month</strong> : UInt8 | Nil
 
-        <a class="method-permalink" href="#express%3F-instance-method">#</a>
+        <a class="method-permalink" href="#exp_month%3AUInt8%7CNil-instance-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Express">Express</a></code></p>
-        </div>
       
       <br/>
       <div>
@@ -1146,18 +1186,41 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="standard?-instance-method">
+    <div class="entry-detail" id="exp_year:UInt16|Nil-instance-method">
       <div class="signature">
         
-        def <strong>standard?</strong>
+        def <strong>exp_year</strong> : UInt16 | Nil
 
-        <a class="method-permalink" href="#standard%3F-instance-method">#</a>
+        <a class="method-permalink" href="#exp_year%3AUInt16%7CNil-instance-method">#</a>
       </div>
       
-        <div class="doc">
-          
-          <p>Returns <code>true</code> if this enum value equals <code><a href="../../Stripe/Account/Type.html#Standard">Standard</a></code></p>
-        </div>
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fingerprint:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>fingerprint</strong> : String | Nil
+
+        <a class="method-permalink" href="#fingerprint%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last4:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last4</strong> : String | Nil
+
+        <a class="method-permalink" href="#last4%3AString%7CNil-instance-method">#</a>
+      </div>
       
       <br/>
       <div>
