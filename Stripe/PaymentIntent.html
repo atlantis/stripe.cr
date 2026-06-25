@@ -667,6 +667,11 @@
       
     </li>
   
+  <li class=" " data-id="stripe/Stripe/PaymentMethod/UsBankAccount" data-name="stripe::paymentmethod::usbankaccount">
+      <a href="../Stripe/PaymentMethod/UsBankAccount.html">UsBankAccount</a>
+      
+    </li>
+  
 </ul>
 
       
@@ -974,6 +979,11 @@
     <br/>
   
     
+      stripe/methods/core/payment_intents/verify_microdeposits.cr
+    
+    <br/>
+  
+    
       stripe/objects/core/payment_intent.cr
     
     <br/>
@@ -1000,7 +1010,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create%28amount%3AInt32%2Ccurrency%3AString%2Cconfirm%3ABool%7CNil%3Dnil%2Ccustomer%3AString%7CStripe%3A%3ACustomer%7CNil%3Dnil%2Cdescription%3AString%7CNil%3Dnil%2Cmetadata%3AHash%28String%2CString%29%7CNil%3Dnil%2Con_behalf_of%3AString%7CNil%3Dnil%2Cusage%3AString%7CNil%3Dnil%2Cpayment_method%3AString%7CToken%7CPaymentMethods%3A%3ACard%7CPaymentMethods%3A%3ABankAccount%7CNil%3Dnil%2Creturn_url%3AString%7CNil%3Dnil%2Cpayment_method_types%3AArray%28String%29%7CNil%3Dnil%2Creceipt_email%3AString%7CNil%3Dnil%2Csetup_future_usage%3AString%7CNil%3Dnil%2Ctransfer_group%3AString%7CNil%3Dnil%2Ccapture_method%3AString%7CNil%3Dnil%2Cexpand%3AArray%28String%29%7CNil%3Dnil%29%3APaymentIntentforallT%2CU-class-method" class="signature"><strong>.create</strong>(amount : Int32, currency : String, confirm : Bool | Nil = <span class="n">nil</span>, customer : String | Stripe::Customer | Nil = <span class="n">nil</span>, description : String | Nil = <span class="n">nil</span>, metadata : Hash(String, String) | Nil = <span class="n">nil</span>, on_behalf_of : String | Nil = <span class="n">nil</span>, usage : String | Nil = <span class="n">nil</span>, payment_method : String | Token | PaymentMethods::Card | PaymentMethods::BankAccount | Nil = <span class="n">nil</span>, return_url : String | Nil = <span class="n">nil</span>, payment_method_types : Array(String) | Nil = <span class="n">nil</span>, receipt_email : String | Nil = <span class="n">nil</span>, setup_future_usage : String | Nil = <span class="n">nil</span>, transfer_group : String | Nil = <span class="n">nil</span>, capture_method : String | Nil = <span class="n">nil</span>, expand : Array(String) | Nil = <span class="n">nil</span>) : PaymentIntent forall T, U</a>
+        <a href="#create%28amount%3AInt32%2Ccurrency%3AString%2Cconfirm%3ABool%7CNil%3Dnil%2Ccustomer%3AString%7CStripe%3A%3ACustomer%7CNil%3Dnil%2Cdescription%3AString%7CNil%3Dnil%2Cmetadata%3AHash%28String%2CString%29%7CNil%3Dnil%2Con_behalf_of%3AString%7CNil%3Dnil%2Cusage%3AString%7CNil%3Dnil%2Cpayment_method%3AString%7CToken%7CPaymentMethods%3A%3ACard%7CPaymentMethods%3A%3ABankAccount%7CNil%3Dnil%2Creturn_url%3AString%7CNil%3Dnil%2Cpayment_method_types%3AArray%28String%29%7CNil%3Dnil%2Cpayment_method_options%3ANamedTuple%7CHash%7CNil%3Dnil%2Creceipt_email%3AString%7CNil%3Dnil%2Csetup_future_usage%3AString%7CNil%3Dnil%2Ctransfer_group%3AString%7CNil%3Dnil%2Ccapture_method%3AString%7CNil%3Dnil%2Cexpand%3AArray%28String%29%7CNil%3Dnil%29%3APaymentIntentforallT%2CU-class-method" class="signature"><strong>.create</strong>(amount : Int32, currency : String, confirm : Bool | Nil = <span class="n">nil</span>, customer : String | Stripe::Customer | Nil = <span class="n">nil</span>, description : String | Nil = <span class="n">nil</span>, metadata : Hash(String, String) | Nil = <span class="n">nil</span>, on_behalf_of : String | Nil = <span class="n">nil</span>, usage : String | Nil = <span class="n">nil</span>, payment_method : String | Token | PaymentMethods::Card | PaymentMethods::BankAccount | Nil = <span class="n">nil</span>, return_url : String | Nil = <span class="n">nil</span>, payment_method_types : Array(String) | Nil = <span class="n">nil</span>, payment_method_options : NamedTuple | Hash | Nil = <span class="n">nil</span>, receipt_email : String | Nil = <span class="n">nil</span>, setup_future_usage : String | Nil = <span class="n">nil</span>, transfer_group : String | Nil = <span class="n">nil</span>, capture_method : String | Nil = <span class="n">nil</span>, expand : Array(String) | Nil = <span class="n">nil</span>) : PaymentIntent forall T, U</a>
         
       </li>
     
@@ -1011,6 +1021,13 @@
     
       <li class="entry-summary">
         <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verify_microdeposits%28intent%3AString%7CPaymentIntent%2Camounts%3AArray%28Int32%29%7CNil%3Dnil%2Cdescriptor_code%3AString%7CNil%3Dnil%29%3APaymentIntent-class-method" class="signature"><strong>.verify_microdeposits</strong>(intent : String | PaymentIntent, amounts : Array(Int32) | Nil = <span class="n">nil</span>, descriptor_code : String | Nil = <span class="n">nil</span>) : PaymentIntent</a>
+        
+          <div class="summary"><p>Verify a us_bank_account PaymentIntent via microdeposits.</p></div>
         
       </li>
     
@@ -1232,12 +1249,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="create(amount:Int32,currency:String,confirm:Bool|Nil=nil,customer:String|Stripe::Customer|Nil=nil,description:String|Nil=nil,metadata:Hash(String,String)|Nil=nil,on_behalf_of:String|Nil=nil,usage:String|Nil=nil,payment_method:String|Token|PaymentMethods::Card|PaymentMethods::BankAccount|Nil=nil,return_url:String|Nil=nil,payment_method_types:Array(String)|Nil=nil,receipt_email:String|Nil=nil,setup_future_usage:String|Nil=nil,transfer_group:String|Nil=nil,capture_method:String|Nil=nil,expand:Array(String)|Nil=nil):PaymentIntentforallT,U-class-method">
+    <div class="entry-detail" id="create(amount:Int32,currency:String,confirm:Bool|Nil=nil,customer:String|Stripe::Customer|Nil=nil,description:String|Nil=nil,metadata:Hash(String,String)|Nil=nil,on_behalf_of:String|Nil=nil,usage:String|Nil=nil,payment_method:String|Token|PaymentMethods::Card|PaymentMethods::BankAccount|Nil=nil,return_url:String|Nil=nil,payment_method_types:Array(String)|Nil=nil,payment_method_options:NamedTuple|Hash|Nil=nil,receipt_email:String|Nil=nil,setup_future_usage:String|Nil=nil,transfer_group:String|Nil=nil,capture_method:String|Nil=nil,expand:Array(String)|Nil=nil):PaymentIntentforallT,U-class-method">
       <div class="signature">
         
-        def self.<strong>create</strong>(amount : Int32, currency : String, confirm : Bool | Nil = <span class="n">nil</span>, customer : String | <a href="../Stripe/Customer.html">Stripe::Customer</a> | Nil = <span class="n">nil</span>, description : String | Nil = <span class="n">nil</span>, metadata : Hash(String, String) | Nil = <span class="n">nil</span>, on_behalf_of : String | Nil = <span class="n">nil</span>, usage : String | Nil = <span class="n">nil</span>, payment_method : String | <a href="../Stripe/Token.html">Token</a> | <a href="../Stripe/PaymentMethods/Card.html">PaymentMethods::Card</a> | <a href="../Stripe/PaymentMethods/BankAccount.html">PaymentMethods::BankAccount</a> | Nil = <span class="n">nil</span>, return_url : String | Nil = <span class="n">nil</span>, payment_method_types : Array(String) | Nil = <span class="n">nil</span>, receipt_email : String | Nil = <span class="n">nil</span>, setup_future_usage : String | Nil = <span class="n">nil</span>, transfer_group : String | Nil = <span class="n">nil</span>, capture_method : String | Nil = <span class="n">nil</span>, expand : Array(String) | Nil = <span class="n">nil</span>) : <a href="../Stripe/PaymentIntent.html">PaymentIntent</a> forall T, U
+        def self.<strong>create</strong>(amount : Int32, currency : String, confirm : Bool | Nil = <span class="n">nil</span>, customer : String | <a href="../Stripe/Customer.html">Stripe::Customer</a> | Nil = <span class="n">nil</span>, description : String | Nil = <span class="n">nil</span>, metadata : Hash(String, String) | Nil = <span class="n">nil</span>, on_behalf_of : String | Nil = <span class="n">nil</span>, usage : String | Nil = <span class="n">nil</span>, payment_method : String | <a href="../Stripe/Token.html">Token</a> | <a href="../Stripe/PaymentMethods/Card.html">PaymentMethods::Card</a> | <a href="../Stripe/PaymentMethods/BankAccount.html">PaymentMethods::BankAccount</a> | Nil = <span class="n">nil</span>, return_url : String | Nil = <span class="n">nil</span>, payment_method_types : Array(String) | Nil = <span class="n">nil</span>, payment_method_options : NamedTuple | Hash | Nil = <span class="n">nil</span>, receipt_email : String | Nil = <span class="n">nil</span>, setup_future_usage : String | Nil = <span class="n">nil</span>, transfer_group : String | Nil = <span class="n">nil</span>, capture_method : String | Nil = <span class="n">nil</span>, expand : Array(String) | Nil = <span class="n">nil</span>) : <a href="../Stripe/PaymentIntent.html">PaymentIntent</a> forall T, U
 
-        <a class="method-permalink" href="#create%28amount%3AInt32%2Ccurrency%3AString%2Cconfirm%3ABool%7CNil%3Dnil%2Ccustomer%3AString%7CStripe%3A%3ACustomer%7CNil%3Dnil%2Cdescription%3AString%7CNil%3Dnil%2Cmetadata%3AHash%28String%2CString%29%7CNil%3Dnil%2Con_behalf_of%3AString%7CNil%3Dnil%2Cusage%3AString%7CNil%3Dnil%2Cpayment_method%3AString%7CToken%7CPaymentMethods%3A%3ACard%7CPaymentMethods%3A%3ABankAccount%7CNil%3Dnil%2Creturn_url%3AString%7CNil%3Dnil%2Cpayment_method_types%3AArray%28String%29%7CNil%3Dnil%2Creceipt_email%3AString%7CNil%3Dnil%2Csetup_future_usage%3AString%7CNil%3Dnil%2Ctransfer_group%3AString%7CNil%3Dnil%2Ccapture_method%3AString%7CNil%3Dnil%2Cexpand%3AArray%28String%29%7CNil%3Dnil%29%3APaymentIntentforallT%2CU-class-method">#</a>
+        <a class="method-permalink" href="#create%28amount%3AInt32%2Ccurrency%3AString%2Cconfirm%3ABool%7CNil%3Dnil%2Ccustomer%3AString%7CStripe%3A%3ACustomer%7CNil%3Dnil%2Cdescription%3AString%7CNil%3Dnil%2Cmetadata%3AHash%28String%2CString%29%7CNil%3Dnil%2Con_behalf_of%3AString%7CNil%3Dnil%2Cusage%3AString%7CNil%3Dnil%2Cpayment_method%3AString%7CToken%7CPaymentMethods%3A%3ACard%7CPaymentMethods%3A%3ABankAccount%7CNil%3Dnil%2Creturn_url%3AString%7CNil%3Dnil%2Cpayment_method_types%3AArray%28String%29%7CNil%3Dnil%2Cpayment_method_options%3ANamedTuple%7CHash%7CNil%3Dnil%2Creceipt_email%3AString%7CNil%3Dnil%2Csetup_future_usage%3AString%7CNil%3Dnil%2Ctransfer_group%3AString%7CNil%3Dnil%2Ccapture_method%3AString%7CNil%3Dnil%2Cexpand%3AArray%28String%29%7CNil%3Dnil%29%3APaymentIntentforallT%2CU-class-method">#</a>
       </div>
       
       <br/>
@@ -1267,6 +1284,26 @@
 
         <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verify_microdeposits(intent:String|PaymentIntent,amounts:Array(Int32)|Nil=nil,descriptor_code:String|Nil=nil):PaymentIntent-class-method">
+      <div class="signature">
+        
+        def self.<strong>verify_microdeposits</strong>(intent : String | <a href="../Stripe/PaymentIntent.html">PaymentIntent</a>, amounts : Array(Int32) | Nil = <span class="n">nil</span>, descriptor_code : String | Nil = <span class="n">nil</span>) : <a href="../Stripe/PaymentIntent.html">PaymentIntent</a>
+
+        <a class="method-permalink" href="#verify_microdeposits%28intent%3AString%7CPaymentIntent%2Camounts%3AArray%28Int32%29%7CNil%3Dnil%2Cdescriptor_code%3AString%7CNil%3Dnil%29%3APaymentIntent-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Verify a us_bank_account PaymentIntent via microdeposits.
+Provide EITHER <code>amounts</code> (two integer cent values) OR a <code>descriptor_code</code>.</p>
+        </div>
       
       <br/>
       <div>
