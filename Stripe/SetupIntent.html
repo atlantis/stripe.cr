@@ -797,6 +797,21 @@
       
         <ul>
   
+  <li class="parent " data-id="stripe/Stripe/SetupIntent/NextAction" data-name="stripe::setupintent::nextaction">
+      <a href="../Stripe/SetupIntent/NextAction.html">NextAction</a>
+      
+        <ul>
+  
+  <li class=" " data-id="stripe/Stripe/SetupIntent/NextAction/VerifyWithMicrodeposits" data-name="stripe::setupintent::nextaction::verifywithmicrodeposits">
+      <a href="../Stripe/SetupIntent/NextAction/VerifyWithMicrodeposits.html">VerifyWithMicrodeposits</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="stripe/Stripe/SetupIntent/Status" data-name="stripe::setupintent::status">
       <a href="../Stripe/SetupIntent/Status.html">Status</a>
       
@@ -1132,6 +1147,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#next_action%3ANextAction%7CNil-instance-method" class="signature"><strong>#next_action</strong> : NextAction | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#payment_method%3AString%7CNil%7CStripe%3A%3APaymentMethod%7CNil-instance-method" class="signature"><strong>#payment_method</strong> : String | Nil | Stripe::PaymentMethod | Nil</a>
         
       </li>
@@ -1148,6 +1168,13 @@
     
       <li class="entry-summary">
         <a href="#usage%3AString-instance-method" class="signature"><strong>#usage</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verify_with_microdeposits_url%3AString%7CNil-instance-method" class="signature"><strong>#verify_with_microdeposits_url</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Stripe-hosted page where the customer enters microdeposit amounts / the descriptor code to verify an ACH bank account.</p></div>
         
       </li>
     
@@ -1524,6 +1551,20 @@ Provide EITHER <code>amounts</code> (two integer cent values) OR a <code>descrip
       </div>
     </div>
   
+    <div class="entry-detail" id="next_action:NextAction|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>next_action</strong> : <a href="../Stripe/SetupIntent/NextAction.html">NextAction</a> | Nil
+
+        <a class="method-permalink" href="#next_action%3ANextAction%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="payment_method:String|Nil|Stripe::PaymentMethod|Nil-instance-method">
       <div class="signature">
         
@@ -1573,6 +1614,28 @@ Provide EITHER <code>amounts</code> (two integer cent values) OR a <code>descrip
 
         <a class="method-permalink" href="#usage%3AString-instance-method">#</a>
       </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verify_with_microdeposits_url:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>verify_with_microdeposits_url</strong> : String | Nil
+
+        <a class="method-permalink" href="#verify_with_microdeposits_url%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stripe-hosted page where the customer enters microdeposit amounts / the
+descriptor code to verify an ACH bank account. Present only while the
+SetupIntent is awaiting manual microdeposit verification; nil otherwise
+(cards, instant-verified ACH, or still-processing instant verification).</p>
+        </div>
       
       <br/>
       <div>
