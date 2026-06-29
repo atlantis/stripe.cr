@@ -14,7 +14,8 @@ class Stripe::Charge
     source : String | Token | PaymentMethods::Card | PaymentMethods::BankAccount? = nil,
     statement_descriptor : String? = nil,
     transfer_group : String? = nil,
-    expand : Array(String)? = nil
+    expand : Array(String)? = nil,
+    idempotency_key : String? = nil
   ) : Charge forall T, U
     customer = customer.as(Customer).id if customer.is_a?(Customer)
 
@@ -32,7 +33,10 @@ class Stripe::Charge
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 
-    response = Stripe.client.post("/v1/charges", form: io.to_s)
+    headers = HTTP::Headers.new
+    headers["Idempotency-Key"] = idempotency_key if idempotency_key
+
+    response = Stripe.client.post("/v1/charges", headers: headers, form: io.to_s)
 
     if response.status_code == 200
       Charge.from_json(response.body)

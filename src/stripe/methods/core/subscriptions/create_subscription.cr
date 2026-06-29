@@ -10,7 +10,8 @@ class Stripe::Subscription
     add_invoice_items : U? = nil,
     trial_end : Time? = nil,
     payment_settings : NamedTuple | Hash? = nil,
-    expand : Array(String)? = nil
+    expand : Array(String)? = nil,
+    idempotency_key : String? = nil
   ) : Subscription forall T, U
     if customer.is_a?(Customer)
       customer = customer.id
@@ -32,7 +33,10 @@ class Stripe::Subscription
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 
-    response = Stripe.client.post("/v1/subscriptions", form: io.to_s)
+    headers = HTTP::Headers.new
+    headers["Idempotency-Key"] = idempotency_key if idempotency_key
+
+    response = Stripe.client.post("/v1/subscriptions", headers: headers, form: io.to_s)
 
     if response.status_code == 200
       Subscription.from_json(response.body)

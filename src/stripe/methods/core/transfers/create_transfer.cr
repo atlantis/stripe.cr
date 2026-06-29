@@ -3,7 +3,8 @@ class Stripe::Transfer
     amount : Int32,
     destination : String | Stripe::Account,
     currency : String,
-    description : String? = nil
+    description : String? = nil,
+    idempotency_key : String? = nil
   ) : Transfer forall T, U
     destination = destination.id if destination.is_a?(Stripe::Account)
 
@@ -14,7 +15,10 @@ class Stripe::Transfer
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 
-    response = Stripe.client.post("/v1/transfers", form: io.to_s)
+    headers = HTTP::Headers.new
+    headers["Idempotency-Key"] = idempotency_key if idempotency_key
+
+    response = Stripe.client.post("/v1/transfers", headers: headers, form: io.to_s)
 
     if response.status_code == 200
       Transfer.from_json(response.body)

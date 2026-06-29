@@ -16,7 +16,8 @@ class Stripe::PaymentIntent
     setup_future_usage : String? = nil,
     transfer_group : String? = nil,
     capture_method : String? = nil,
-    expand : Array(String)? = nil
+    expand : Array(String)? = nil,
+    idempotency_key : String? = nil
   ) : PaymentIntent forall T, U
     customer = customer.as(Customer).id if customer.is_a?(Customer)
 
@@ -36,7 +37,10 @@ class Stripe::PaymentIntent
       builder.add({{x}}, {{x.id}}) unless {{x.id}}.nil?
     {% end %}
 
-    response = Stripe.client.post("/v1/payment_intents", form: io.to_s)
+    headers = HTTP::Headers.new
+    headers["Idempotency-Key"] = idempotency_key if idempotency_key
+
+    response = Stripe.client.post("/v1/payment_intents", headers: headers, form: io.to_s)
 
     if response.status_code == 200
       PaymentIntent.from_json(response.body)
