@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="stripe">
-  <title>Stripe::Charge::TransferData - stripe 1.6.0</title>
+  <title>Stripe::SetupIntent::NextAction - stripe 1.6.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -362,7 +362,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="stripe/Stripe/Charge" data-name="stripe::charge">
+  <li class="parent " data-id="stripe/Stripe/Charge" data-name="stripe::charge">
       <a href="../../Stripe/Charge.html">Charge</a>
       
         <ul>
@@ -427,7 +427,7 @@
       
     </li>
   
-  <li class=" current" data-id="stripe/Stripe/Charge/TransferData" data-name="stripe::charge::transferdata">
+  <li class=" " data-id="stripe/Stripe/Charge/TransferData" data-name="stripe::charge::transferdata">
       <a href="../../Stripe/Charge/TransferData.html">TransferData</a>
       
     </li>
@@ -792,12 +792,12 @@
       
     </li>
   
-  <li class="parent " data-id="stripe/Stripe/SetupIntent" data-name="stripe::setupintent">
+  <li class="parent open current" data-id="stripe/Stripe/SetupIntent" data-name="stripe::setupintent">
       <a href="../../Stripe/SetupIntent.html">SetupIntent</a>
       
         <ul>
   
-  <li class="parent " data-id="stripe/Stripe/SetupIntent/NextAction" data-name="stripe::setupintent::nextaction">
+  <li class="parent open current" data-id="stripe/Stripe/SetupIntent/NextAction" data-name="stripe::setupintent::nextaction">
       <a href="../../Stripe/SetupIntent/NextAction.html">NextAction</a>
       
         <ul>
@@ -938,15 +938,28 @@
 
   <span class="kind">
     class
-  </span> Stripe::<wbr>Charge::<wbr>TransferData
+  </span> Stripe::<wbr>SetupIntent::<wbr>NextAction
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Stripe/Charge/TransferData.html">Stripe::Charge::TransferData</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Stripe/SetupIntent/NextAction.html">Stripe::SetupIntent::NextAction</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Set while the SetupIntent needs an extra step before it's usable. For ACH the
+case we care about is manual microdeposit verification, where Stripe exposes a
+hosted page the customer uses to enter the amounts/descriptor code.</p>
 
 
 
@@ -987,7 +1000,7 @@
   </h2>
   
     
-      stripe/objects/core/charge.cr
+      stripe/objects/core/setup_intent.cr
     
     <br/>
   
@@ -1036,12 +1049,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#amount%3AInt32%7CNil-instance-method" class="signature"><strong>#amount</strong> : Int32 | Nil</a>
+        <a href="#type%3AString%7CNil-instance-method" class="signature"><strong>#type</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#destination%3AString%7CNil%7CStripe%3A%3AAccount%7CNil-instance-method" class="signature"><strong>#destination</strong> : String | Nil | Stripe::Account | Nil</a>
+        <a href="#verify_with_microdeposits%3AVerifyWithMicrodeposits%7CNil-instance-method" class="signature"><strong>#verify_with_microdeposits</strong> : VerifyWithMicrodeposits | Nil</a>
         
       </li>
     
@@ -1146,12 +1159,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="amount:Int32|Nil-instance-method">
+    <div class="entry-detail" id="type:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>amount</strong> : Int32 | Nil
+        def <strong>type</strong> : String | Nil
 
-        <a class="method-permalink" href="#amount%3AInt32%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#type%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
@@ -1160,12 +1173,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="destination:String|Nil|Stripe::Account|Nil-instance-method">
+    <div class="entry-detail" id="verify_with_microdeposits:VerifyWithMicrodeposits|Nil-instance-method">
       <div class="signature">
         
-        def <strong>destination</strong> : String | Nil | <a href="../../Stripe/Account.html">Stripe::Account</a> | Nil
+        def <strong>verify_with_microdeposits</strong> : <a href="../../Stripe/SetupIntent/NextAction/VerifyWithMicrodeposits.html">VerifyWithMicrodeposits</a> | Nil
 
-        <a class="method-permalink" href="#destination%3AString%7CNil%7CStripe%3A%3AAccount%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#verify_with_microdeposits%3AVerifyWithMicrodeposits%7CNil-instance-method">#</a>
       </div>
       
       <br/>
